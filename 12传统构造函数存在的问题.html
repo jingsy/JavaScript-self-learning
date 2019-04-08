@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+
+	<script type="text/javascript">
+
+
+		function studyMethod(){
+			console.log(this.name);
+		}
+
+		function Student(name,age,height,weight,study){
+			this.name=name;
+			this.age=age;
+			this.height=height;
+			this.weight=weight;
+			this.study=studyMethod;
+		}
+
+		//如果构造函数没有参数 那么调用的时候括号可以省略
+
+		var stu = new Student("jason",12,"170cm","120kg");
+
+		var stu1 = new Student("marry",11,"170cm","140kg");
+
+
+		//如果在构造函数中定义函数 每次创建对象 都会重新创建函数 这样会造成资源浪费
+		//我们可以把函数放在构造函数外面 这样不用造成资源浪费
+
+		//使用这种方式写好的方法中的this 指向的就是调用该方法的对象
+		//this 谁调用就是谁
+
+		//新的问题：1.这种方法造成全局变量太多。污染
+		//2.结构混乱
+
+	</script>
+</body>
+</html>
