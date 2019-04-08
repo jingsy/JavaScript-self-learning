@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		var obj ={
+			name: "尼古拉斯赵四",
+			age : 20
+		}
+
+
+		//delete关键字可以删除对象的属性,还有未使用var声明的变量
+		//delete关键字有返回值（bool） 可以表示删除是否成功
+		//如果删除的属性存在于原型中，那么返回值为true，但是其实并未删除
+		delete obj.name;
+		console.log(obj.name); //undefined
+
+		//还有未使用var声明的变量 其实就是删除了window的属性
+		// var num =10;
+		num1=100;
+		console.log(window.num1);
+		delete num1;
+		console.log(num1);
+
+
+		//注意⚠️ 如果删除不存在的属性，返回结果会为true
+
+	</script>
+</body>
+</html>

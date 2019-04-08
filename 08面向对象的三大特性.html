@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		//f封装
+		// var name ="ja";
+		// var age =18;
+
+		// function sayHi(){
+		// 	console.log("hi");
+		// }
+
+		// // var obj ={
+		// // 	name:"ja",
+		// // 	age:50
+		// // 	sayHi: function(){
+		// // 		//...
+		// // 	}
+		// // }
+
+		// //继承
+		// //js中的继承指的是
+		// //一个对象没有一些方法和属性 但是其他的对象有
+		// //把其他对象的拿过来用 着就是js的继承
+
+		var obj ={
+
+		};
+
+		var obj1 ={
+			name:"zhang",
+			sayHello:function(){
+				console.log("nihao");
+			}
+		}
+
+		// obj.sayHello();
+
+		//混入式继承 for in
+		for(var k in obj1){
+			//k可以获取到对象的每一个属性
+			//obj[k]可以拿到每一个值
+			obj[k] = obj1[k];
+		}
+
+		obj.sayHello();
+
+	</script>
+</body>
+</html>

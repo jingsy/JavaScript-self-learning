@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		//如何创建一个对象
+		//1.对象字面量
+
+		//缺点：只能创建一次对象，复用性太差，创建多个对象冗余度过高
+
+		// var obj ={
+		// 	name:"演员",
+		// 	singer:"薛之谦",
+		// 	type:"pop"
+		// };
+		// var obj1={
+		// 	name:"wenbie",
+		// 	singer:"zhangxueyou",
+		// 	type:"pop"
+		// }
+
+		//方法2
+		//使用内置构造函数
+
+		//缺点：同上
+		// var obj= new Object();
+		// obj.name = "jay";
+		// obj.singer="ok";
+		// obj.sing = function(){
+		// 	console.log("fafafafa");
+		// }
+
+		//方法3
+		//封装简单的工厂函数（不推荐使用）
+		function createSong(songName,singerName){
+			var obj= new Object();
+			obj.name = songName;
+			obj.singer=singerName;
+			obj.sing = function(){
+				console.log("fafafafa");
+			}
+			return obj;
+		}
+		var obj = createSong("jy","周杰伦");
+		var obj1 =createSong();
+		console.log(obj);
+ 
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

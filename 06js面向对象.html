@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		
+	</div>
+
+	<script type="text/javascript">
+		//对象的特征就是用来描述对象的相关信息
+		//面向对象是对面向过程的封装
+
+		//封装
+
+		//使用函数封装带来的问题，
+		//1.全局变量污染
+		//2.代码结构不够清晰，维护不方便
+
+		window.onload = function () {
+
+		function tag(tagname){
+			return document.getElementsByTagName(tagname);
+		}
+
+
+		function setStyle(elements){
+			for (var i = 0; i < elements.length; i++) {
+				var ele = elements[i];
+				ele.style.border = "1px solid black";
+			}
+		}
+
+		var divs= tag("div");
+		setStyle(divs);
+
+		var ps = tag("p");
+		setStyle(ps);
+
+	}
+
+
+
+
+	</script>
+</body>
+</html>

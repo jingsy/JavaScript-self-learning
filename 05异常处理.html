@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		//捕获异常
+		//try catch finally
+
+		//语法：
+		try{
+			// a();
+			//可能会出现问题的代码
+			throw "你的代码坏了";
+		}		
+		catch(e){
+			//出现异常的处理代码
+			console.log(e);
+		}
+		finally{
+
+		}
+
+		//throw的用法，
+		function sum(num1,num2){
+			if (num1==undefined||num2==undefined) {
+			//throw当成一个对象用
+				throw{
+					errMsg:"传参错误",
+					errCode:-1
+				};
+			}else{
+				return num1 + num2;
+			}
+		}
+
+		sum(0);
+
+
+		try{
+			sum(0);
+		}
+		catch(e){
+			console.log(e.errMsg);
+		}
+		//异常捕获的完整形式
+		try{
+
+		}
+		catch(e){
+		//出现异常的处理代码
+		}
+		finally{
+		//不管有没有出现错误 代码都会执行
+		//node.js
+		//做释放资源的操作
+		//前端一般不会用
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

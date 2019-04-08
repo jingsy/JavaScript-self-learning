@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		//创建对象的方式
+		//自定义构造函数
+		//构造函数也是函数 通常用来初始化对象
+		//new 用来创建对象
+		//构造函数用来初始化对象（给对象新增成员，即属性和方法）
+
+		//构造函数名 首字母大写！ 以示区分
+		function Person(){
+			//默认隐含的操作：把刚才用new新建的对象 赋值给this
+			this.name="赵四";
+			this.age=50;
+			this.sayHello = function (){
+				console.log("hi");
+			}
+		} 
+
+		var p = new Person(); //内部其实就是：new Object();
+		console.log(p);
+		p.sayHello();
+
+
+		//构造函数的返回值
+		//1.默认返回的是新创建出来的对象
+		//2.如果我们自己写return语句，return的是空值 或者是基本类型的值 都会返回创建出来的对象
+		//3.如果返回的是object类型的值 不会返回对象，取而代之的是改值
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

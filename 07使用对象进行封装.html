@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+
+	<script type="text/javascript">
+		
+		window.onload = function () {
+
+		// function tag(tagname){
+		// 	return document.getElementsByTagName(tagname);
+		// }
+
+
+		// function setStyle(elements){
+		// 	for (var i = 0; i < elements.length; i++) {
+		// 		var ele = elements[i];
+		// 		ele.style.border = "1px solid black";
+		// 	}
+		// }
+
+		// var divs= tag("div");
+		// setStyle(divs);
+
+		// var ps = tag("p");
+		// setStyle(ps);
+
+
+		//把函数全部封装进对象 不造成全局变量污染 2.分类封装 使结构清晰
+		
+		var itcastQuery = {
+			//获取dom元素的方法们
+			getEle{
+				tag: function tag(tagname){
+					return document.getElementsByTagName(tagname);
+				}
+
+				id:function(id){
+					return document.getElementById(id);
+				}
+			},
+
+			//设置样式的方法们
+			setCss:{
+				setstyle:function setStyle(elements){
+					for (var i = 0; i < elements.length; i++) {
+						var ele = elements[i];
+						ele.style.border = "1px solid black";
+					}
+				}
+
+			}
+		}
+
+
+
+
+
+
+	}
+
+
+
+
+</script>
+</body>
+</html>
