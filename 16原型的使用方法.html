@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+
+
+	<script type="text/javascript">
+		
+	//实例化
+	//通过构造函数创建对象的过程
+
+
+		function Person(name,age,genger){
+			this.name=name;
+			this.age=age;
+			this.gender=gender;
+			
+
+		}	
+
+		//原型的使用方法
+		//1.利用对象的动态特性给原型对象添加成员
+		
+
+		//2.直接替换原型对象
+		//这种方法会出现如下问题：
+		//在替换原型之前创建的对象的原型 和 替换之后创建的对象的原型 不是同一个，
+		Person.prototype.sayHello()=function(){
+			console.log("nihaoa");
+		}
+		var p = new Person("jay", 19, "male");
+		
+		p.sayHello();
+
+
+		//替换了原型对象
+		Person.prototype={
+			msg: "hi"
+		};
+
+		var p1 = new Person("ja11y", 19, "male");
+
+		console.log(p1.msg);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

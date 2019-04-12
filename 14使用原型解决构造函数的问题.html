@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+
+
+	<script type="text/javascript">
+		function Person(name,age,genger){
+			this.name=name;
+			this.age=age;
+			this.gender=gender;
+			//1.
+			// this.sayHello = function(){
+			// 	console.log("hi"+this.name);
+			// }
+
+		}	
+
+		var p = new Person("jay",18,"male");
+
+		var p1 = new Person("zhang",10),"male";
+
+
+		//2.p和p1的sayHello方法代码都一样，但是上面这样写每次都会生成这个方法
+		//3.所以我们把this.sayHello()拿出来放到原型里
+		Person.prototype.sayHello = function(){
+				console.log("hi"+this.name);
+			}
+
+		p.sayHello();
+		p1.sayHello();
+
+		//总结：如何使用原型来解决构造函数存在的问题？
+		//构造函数的原型对象中成员可以被该构造函数创建出来的对象访问，而且所有的对象共享该对象
+		//所以 我们将构造函数中需要创建的函数放进原型中
+
+		//这样解决了1.全局变量污染问题 2.代码结构混乱问题
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>
