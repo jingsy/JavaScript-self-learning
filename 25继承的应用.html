@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		var arr = [1,2,3];
+		Array.prototype.sayHello = function(){
+			console.log("hi");
+		}
+		arr.sayHello();
+		//一般不会向以上这样写
+		//一般情况下向内置对象新增方法
+		//这叫扩展内置对象：（不被推荐）
+
+		//如何安全的扩展一个内置对象
+		function myArr(){
+			this.name = "i am array";
+		}
+		var arr = new Array();
+
+		myArr.prototype = arr;
+
+		//myArr 这个对象就继承自arr
+		var myArr = new myArr();
+		myArr.push(1);
+		myArr.push(2);
+		myArr.push(3);
+		console.log(myArr);
+
+	</script>
+</body>
+</html>

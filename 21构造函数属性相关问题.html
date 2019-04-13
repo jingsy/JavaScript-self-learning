@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Person(){
+
+		}
+
+
+		console.log(Person.prototype.constructor);
+		
+		//替换原型
+		Person.prototype={};
+
+		//值改变
+		console.log(Person.prototype.constructor);
+
+		//在使用新的对象替换掉默认的原型对象之后。原型对象中的constructor
+		//属性会变成pbject， 为了保证整个构造函数---原型---对象
+		//之间的关系的合理性，应做如下操作：
+		//替换原型对象的时候，在新的原型对象中手动添加constructor属性
+		Person.prototype={
+			constructor: Person
+		};
+
+	</script>
+</body>
+</html>

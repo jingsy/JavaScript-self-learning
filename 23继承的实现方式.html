@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		//继承：当前没有的方法或者属性，别人有就拿过来用
+		//混入式继承
+
+		var o = {
+
+		}
+
+		var obj = {
+			name: "a",
+			age: 18;
+			sayHello: function(){
+				console.log("hi");
+			}
+		}
+
+
+		//混入式继承
+		for (var k in obj){
+			o[k]= obj[k];
+		}
+
+		console.log(o);
+	</script>
+</body>
+</html>

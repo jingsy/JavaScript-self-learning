@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		
+	//原型继承
+	//原型对象中的成员可以和其相关的所有对象共享
+	//利用这一特性，可以实现继承
+
+	//1.给原型对象中添加成员（通过对象的动态特性）不是严格意义上的继承
+	// function Person(name,age){
+	// 	this.name = name;
+	// 	this.age = age;
+	// }
+
+	// Person.prototype.sayHello = function(){
+	// 	console.log("hello");
+	// }
+
+	// var p = new Person("zhansan", "50");
+	// p.sayHello();
+	//这里的p对象就继承了原型对象
+
+	//#####################################################
+	//2.直接替换原型对象
+	// function Person(name,age){
+	// 	this.name = name;
+	// 	this.age = age;
+	// }
+
+	// var parent = {
+	// 	sayHello:function(){
+	// 		console.log("hihiihii");
+	// 	}
+	// }
+	// Person.prototype = parent;
+
+	// var p = new Person("zhansan", "50");
+	
+	// p.sayHello();//现在的原型就变成了parent，
+	//这样实现了p继承了parent
+	//实现原理都是基于原型
+	//注意很有替换原型的方法，会造成原有的属性的丢失
+	//替换之后 sayHello方法不复存在
+
+
+	//#####################################################
+	//3.利用混入的方式给原型对象添加成员
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+
+	//原型中原有的方法
+	Person.prototype.sayNo(){
+		console.log("no");
+	}
+
+	var parent = {
+		sayHello:function(){
+			console.log("hihiihii");
+		}
+	}
+
+	for(var k in parent){
+		Person.prototype[k] = parent[k];
+	}
+
+	var p = new Person("zhansan", "50");
+	p.sayHello()；
+	//p继承自原型中
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

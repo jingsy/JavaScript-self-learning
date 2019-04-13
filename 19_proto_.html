@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+
+
+		function Person(){
+
+		}
+
+		//1.通过构造函数访问原型
+		Person.prototype.msg="hi?";
+		var p = new Person();
+
+		//2.通过对象访问原型
+
+		//__proto__属性
+		//__proto__是一个非标准的属性
+		//为了保证通用性 这个属性不推荐使用
+		console.log(p.__proto__);
+
+		//___________________________________
+		//下面的方法虽然能用 但是有问题
+		//__proto__主要用来做调试
+		p.__proto__.sayHello = function(){
+			console.log("nihao");
+		}
+
+		p.sayHello();//nihao
+
+		
+	</script>
+</body>
+</html>
