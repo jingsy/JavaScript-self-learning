@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	# javascript 4月14日 下午
+
+	## 继承
+	### 混入式继承
+		for in
+		使用for in 遍历对象的属性，将所有的属性添加到另外一个对象上
+		这时候就可以称 对象2 继承自 对象1
+
+	### 原型继承
+		* 利用对象的动态特性，为原型对象添加成员
+		* 直接替换原型对象
+			1.替换前的对象在替换之后所有成员都丢失了
+			2.替换原型对象的时候需要手动去指定将要替换的原型对象 指定constructor
+		* 利用混入给原型对象添加成员
+			
+	### 经典继承
+	```js
+		var 对象1 = Object.create(对象2);
+	```
+		这个时候创建出来的对象继承自对象2
+
+		Object.create存在兼容性问题
+		如何解决？
+		解决方法：
+			1.首先监测浏览器是否支持Object.create()如果不支持,则手动添加
+			2.自定义函数，在函数内部判断浏览器是否支持Object.create(),如果不支持则手动创建对象返回，如果支持，则直接调用
+
+			```js
+				function create(obj){
+				if(Object.create){
+					return Object.create(obj);
+				}else{
+					function F(){}
+					F.prototype = obj;
+
+					return new F();	
+				}
+			}
+			```
+
+	## 原型链
+	### 什么是原型链
+		每个构造函数都有原型对象，每个对象都有构造函数，
+		每个构造函数的原型对象都是对象，也就有构造函数，
+		然后就形成了一个链式的结构
+
+	### 原型继承是什么
+		通过修改原型链的结构，实现继承的方式
+
+	### 对象和原型的成员关系
+	```js
+		function Person(){};
+		var p = new Person();
+	```
+	p对象包含的成员有：Person.prototype中的成员 和自身拥有的成员
+	Person.prototype拥有的成员有：Object.prototype的成员和自身的成员
+
+	所以：p对象可以访问 Person.prototype 和 Object.prototype 中的所有成员
+
+	### Object.prototype的成员
+	* constructor:指向和该原型相关的构造函数
+	* hasOwnProperty 方法：判断对象本身是否拥有某个属性
+	* properIsEnumerable 方法：1.判断属性是否属于对象本身，以及判断属性是否可以被遍历
+	* toString toLocaleString: 将对象转换为字符串
+	toLocaleString 转换为字符串的时候 应用的是本地的设置格式
+	* valueOf 方法： 在对象参与运算的时候， 首先调用valueOf方法获取对象的值，如果该值无法参与运算，将会调用出toString方法
+	* __proto__ 属性：指向当前对象的原型对象
+
+	## Function
+	可以用Function来创建函数
+	### 三种方式
+		* 直接申明函数
+		* 函数表达式
+		* new Function（）
+
+	可以用Function来创建函数
+	语法：
+	```javascript
+	var 函数名 = new Function(); //创建一个空的函数
+	var 函数名 = new Function("函数体"); //创建一个没有参数的函数
+	var 函数名 = new Function(“参数1",“参数2",函数体"); //当给function传多个参数的时候，最后一个参数为函数体，前面参数为创建出的这个参数的形参
+	//function接受的所有参数都是字符串类型的
+	```
+
+	## arguments
+	arguments对象是函数内部的一个对象，调用时候，函数会把所有的参数存入该对象
+	注意：不管有没有形参，实参都会被存入该对象
+
+	## eval
+	可以将字符串转换为js代码并执行
+
+	注意： 当使用eval解析JSON格式字符串的时候
+	1.可以在JSON格式字符串前面拼接 “var 变量名 =”
+	如：	eval("var 变量名=" +json格式的字符串)
+
+	2.可以在JSON格式字符串前后拼接（）
+		eval("("+JSON格式字符串+")")
+
+	## 静态成员和实例成员
+	### 静态成员
+		是指构造函数的属性和方法
+	### 实例成员
+		是指实例的属性和方法
+
+
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript">
+
+	</script>
+</body>
+</html>

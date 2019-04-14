@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		//constructor
+
+		//hasOwnProperty
+
+		//propertyIsEnumerable
+			//判断属性是否属于对象本身
+			//判断属性时候可以读 写 被遍历
+
+		//toString toLocaleString
+		
+		//valueOf
+		function Person(){
+			this.valueOf = function(){
+				return 1;
+			}
+		}
+
+		var p = new Person();
+
+		//在对象参与运算的时候
+		//默认的会先去调用对象的valueOf方法，如果valueOF获取到的
+		//值无法进行运算，就去调用p的toString方法
+		//默认的去调用p的toString方法，最终做的是字符串拼接
+
+		console.log(1 + p);
+
+		//__proto__
+		//原型对象对象中的属性
+		//可以使用对象.__proto__去访问原型对象
+
+	</script>
+</body>
+</html>

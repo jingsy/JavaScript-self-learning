@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		
+		//instanceof 关键字
+		//查看 a 是不是 A（）创建出来的
+		//判断该构造函数的"原型"是否存在于该对象的原型链上
+		//语法 对象 instanecof 构造函数
+
+		function Person(){
+
+		}
+
+		//p--->Person.prototype---Object.prototype
+		var p = new Person();
+
+		console.log(p instanceof Person);//true
+		console.log(p instanceof Object);//true
+	</script>
+</body>
+</html>

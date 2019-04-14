@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		function Person(){
+			this.name="sd";
+			this.run=function(){
+				console.log("pao");
+			}
+		}
+
+		//Person.prototype
+
+		var p = new Person();
+
+		//静态成员和实例成员的概念，是从其他编程语言中引入的
+		//静态成员：
+			//是指构造函数的属性和方法
+			//Person.prototype
+			//Person.name
+			//$.trim();
+			//$.each();
+			//$.extend();
+
+		//实例成员：
+			//是指实例的属性和方法
+			// name , run 
+			//__proto__
+
+			//$("#id").css();
+			//$("#id").text();
+
+		//常用的编码规范
+		//一般把工具方法作为静态成员
+		//对跟对象相关的作为实例成员
+	</script>
+</body>
+</html>

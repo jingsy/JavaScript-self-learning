@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		//要求允许函数调用时传入任意
+
+		//函数内部的对象arguments
+		//当函数调用的时候 这个对象会将传入的所有实参，依次存入数组对象
+		// function max(){
+		// 	console.log(arguments);
+		// 	var maxNum = arguments[0];
+		// 	for (var i = 1; i < arguments.length; i++) {
+		// 		maxNum = maxNum > arguments[i]?maxNum: arguments[i];
+		// 	}
+		// 	return maxNum;
+		// }
+		// console.log(max(1,2,3,4,2));
+
+
+		
+
+	//利用arguments进行数组去重
+
+		var distinct = new Function(`
+			var arr =[];
+			for (var i = 0; i < arguments.length; i++) {
+				if(arr.indexOf(arguments[i])==-1){
+					arr.push(arguments[i]);
+				}
+			}
+			return arr;
+		`);
+
+		console.log(distinct(1,55,22,22,5));
+
+		//1.一个函数有形参的时候，调用的时候 可以不传参数
+		//2.一个函数没有形参的时候调用的时候 可以传参数 arguents
+		//对象会接受
+		//3.不管有没有形参 调用的时候 都会把实参的值存入arguments对象
+
+
+
+</script>
+</body>
+</html>

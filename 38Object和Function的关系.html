@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		//Object构造函数 是 通过 Function构造函数构造出来的
+		//Function构造函数 也是 通过 Function构造函数构造出来的（不要求理解）
+
+		//instanceof
+		//Object.prototype是否在Function的原型链上
+		//Function--->Function.prototype---->Object.prototype---->null
+		console.log(Function instanceof Object);//true
+
+		//Function.protype是否在FUnction的原型链上
+		console.log(Function instanceof Function);//true
+
+		//Object---Function.prototype---->Object.protype----->null
+		console.log(Object instanceof Function);//true
+		console.log(Object instanceof Object);//true
+	</script>
+</body>
+</html>
