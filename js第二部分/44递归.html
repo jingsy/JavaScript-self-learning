@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		//递归
+		//没有递归结束条件的递归就是死递归
+
+		//1.自己调用自己
+		//2.要有结束的条件
+
+		//使用递归的方法
+		//化归思想
+
+
+		// var count = 0;
+
+		// function test(a,b,c){
+		// 	if (count++==5) {
+		// 		return;
+		// 	}
+		// 	console.log(count);
+		// 	test();
+		// }
+
+		// test();
+
+
+		//sum(n)=sum(n-1)+n
+		//函数求1-n的和
+
+		function sum(n){
+			if (n==1) {
+				return 1;
+			}
+			//return sum(1)+2
+			return sum(n-1)+n;
+		}
+
+
+		var num = sum(3);
+		console.log(num);
+	</script>
+</body>
+</html>

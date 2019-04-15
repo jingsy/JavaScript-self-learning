@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		var songList = [
+			{
+				songName:"情书",
+				singer: "张学友"
+			},
+			{
+				songName:"演员",
+				singer: "薛之谦"
+			},
+			{
+				songName:"李白",
+				singer: "李荣浩"
+			}
+		];
+
+		//增删改查
+		songList.push({
+			songName: "晴天",
+			singer: "周杰伦"
+		});
+
+		console.log(songList);
+		//删
+		for (var i = 0; i < songList.length; i++) {
+			var song = songList[i];
+			if (song.songName=="李白") {
+				//splice("起始索引"，删几个)
+				songList.splice(i,1);
+			}
+		}
+		console.log(songList);
+
+		//改
+		for (var i = 0; i < songList.length; i++) {
+			var song = songList[i];
+			if (song.songName=="演员") {
+				song.singer="薛笑谦";
+			}
+		}
+		console.log(songList);
+
+		//查
+		for (var i = 0; i < songList.length; i++) {
+			var song = songList[i];
+			if (song.songName=="演员") {
+				console.log(song);
+			}
+		}
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

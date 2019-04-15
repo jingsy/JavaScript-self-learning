@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		//1 1 2 3 5 8 13 21...
+
+
+		function fabnaqi(n){
+			if (n<=2) {
+				return 1;
+			}
+			return fabnaqi(n-1)+fabnaqi(n-2);
+		}
+
+
+		console.log(fabnaqi(4));
+
+	</script>
+</body>
+</html>
