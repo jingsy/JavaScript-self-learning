@@ -27,7 +27,7 @@
                     var childNode = nodeList[i];
                     //判断是否是元素节点
                     if(childNode.nodeType == 1){
-                        childNode.style.border = "1px solid pink";
+                        allChildren.push(childNode)
                         getChildNode(childNode);
                     }
 
@@ -36,6 +36,11 @@
 
             getChildNode(document.body);
 
+            for (var i = 0; i < allChildren.length; i++) {
+                var child = allChildren[i];
+                child.style.border= "1px solid pink";
+
+            }
         }
 
 

@@ -14,11 +14,12 @@
             //先找body的所有子元素
             //再找body的子元素的所有子元素
 
-            var allChildren = [];
+
 
             function getChildNode(node){
                 //先找子元素
                 var nodeList = node.childNodes;
+                var result = [];
                 //在用子元素再找子元素  这里就可以递归了
                 //for循环中的条件，就充当了结束的条件
                 for (var i = 0; i < nodeList.length; i++) {
@@ -27,15 +28,27 @@
                     var childNode = nodeList[i];
                     //判断是否是元素节点
                     if(childNode.nodeType == 1){
-                        childNode.style.border = "1px solid pink";
-                        getChildNode(childNode);
+                        result.push(childNode);
+                        var temp = getChildNode(childNode);
+                        result = result.concat(temp);
                     }
 
                 }
+                return result;
             }
 
-            getChildNode(document.body);
+            //1.第一次调用时获取body的所有子元素,会把所有的子元素全部放到result里面
+            //2.每放进去一个 就找这个子元素的所有子元素  有返回值
+            //3.把这个返回值和我们存当前子元素的数组拼接起来 就变成了 子元素 和 孙子元素的集合
 
+
+            var arr = getChildNode(document.body);
+
+            for (var i = 0; i < arr.length; i++) {
+                var child = arr[i];
+                child.style.border= "1px solid pink";
+
+            }
         }
 
 
