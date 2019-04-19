@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		//1.在使用变量的时候
+			#首先在所在的作用域查找
+			*如果找到了就直接使用
+			*如果没找到就去上级作用域查找
+		//2.重复以上步骤
+			*如果直到0级作用域链也就是全局作用域还没有找到 就报错——变量搜索原则
+
+		var num =456;
+		function f(){
+			num =678;
+			function foo(){
+				var num=999;
+				console.log(num);
+			}
+			foo();
+			console.log(num);
+		}
+		f();
+
+		//预解析
+		var num;
+		function f(){
+
+			function foo(){
+				var num=999;
+				console.log(num);//999
+				
+			}
+			num=678;
+			foo();
+			console.log(num);//678
+		};
+		num=456;
+		f();
+
+
+	</script>
+</body>
+</html>

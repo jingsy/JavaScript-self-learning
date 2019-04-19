@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		
+		//1
+		// function foo(){
+		// 	var num =123;
+		// 	console.log(num);//123
+		// }
+		// foo();
+		// console.log(num);//err
+
+		// //提升后的代码
+		// function foo(){
+		// 	var num
+		// 	num=123;
+		// 	console.log(num);
+		// }
+		// foo();
+		// console.log(num);
+
+		//is not defined 没有定义
+		//undefined 定义了 没有赋值
+
+		//2
+		// var scope = "global";
+		// function foo(){
+		// 	console.log(scope);//
+		// 	var scope ="local";
+		// 	console.log(scope);//
+		// }
+		// foo();
+
+		// //我的思路 (正确)
+		// var scope;
+		// function foo(){
+		// 	var scope;
+		// 	console.log(scope);//undifened
+		// 	scope="local";
+		// 	console.log(scope);//local
+		// }
+		// scope = "global";
+		// foo();
+
+
+		//3 in 判断 某个对象是否有某个属性
+		// if("a"in window){
+		// 	var a =10;
+		// }
+		// alert(a);//10
+		// //预解析
+		// var a;
+		// if("a"in window){
+		// 	a =10;
+		// }
+		// alert(a);//10
+
+
+		// if(!"a"in window){
+		// 	var a =10;
+		// }
+		// alert(a);//undefined
+
+
+
+
+		//4.
+		// var foo =1 ;
+		// function bar(){
+		// 	if(!foo){
+		// 		var foo =10;
+		// 	}
+		// 	alert(foo);
+		// }
+		// bar();
+
+		// //我的思路(正确🙆)
+		// var foo;
+		// function bar (){
+		// 	var foo
+		// 	if (!foo) {
+		// 		foo = 10;
+		// 	}
+		// 	alert(foo);//10
+		// }
+		// foo =1;
+		// bar();
+
+
+
+		//5
+		// function Foo(){
+		// 	getName = function(){
+		// 		alert(1);
+		// 	};
+		// 	return this;
+		// }
+
+		// Foo.getName = function(){alert(2);};
+		// Foo.prototype.getName=function(){alert(3);};
+		// var getName=function(){alert(4);};
+		// function getName(){
+		// 	alert(5);
+		// }
+
+		// Foo.getName();//2
+		// getName();//5
+		// Foo().getName();
+		// getName();
+		// new Foo.getName();
+		// new Foo().getName();
+		// new new Foo().getName();
+
+		//
+		function Foo(){
+			getName = function(){
+				alert(1);
+			};
+			return this;
+		}
+		var getName;
+		function getName(){
+			alert(5);
+		}
+		Foo.getName = function(){alert(2);};
+		Foo.prototype.getName=function(){alert(3);};
+		getName=function (){alert(4);}; //前面虽然提升了 但是被后面的覆盖了 所有是4
+
+		Foo.getName();//2
+		getName();//4
+		Foo().getName();//1
+		getName();//1
+		new Foo.getName();//3
+		new Foo().getName();//3
+		new new Foo().getName();//3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

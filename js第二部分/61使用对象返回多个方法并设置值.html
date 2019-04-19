@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		
+		function foo(){
+			var name ="jay";
+			var gender = "female";
+			return {
+				getName: function(){
+					return name;
+				},
+				setName: function(value){
+					name =value;
+					return name;
+				},
+				getGender: function(){
+					return gender;
+				},
+				setGender: function(value){
+					gender =value;
+					return gender;
+				}
+			}
+		}
+
+
+		var obj = foo();
+
+		console.log(obj.getName());
+		console.log(obj.setName("hi"));
+	</script>
+</body>
+</html>
