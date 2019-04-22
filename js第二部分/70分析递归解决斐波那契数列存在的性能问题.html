@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		// f(n) = f (n-1)+ f(n-2)
+
+
+		//存在性能问题
+		function fib(n){
+			if (n<=2) {
+				return 1;
+			}
+			return fib(n-1) + fib(n-2);
+		}
+
+
+		//使用数组存在局限性
+		// var arr = [1,1,2,3,5``````]
+
+
+
+
+		//定义一个缓存数组 然后存储已经计算出来的斐波那契数
+		//计算的步骤：
+			//1.先从数组中查找想要获取的数字
+			//2.如果获取到了 直接使用
+			//3.如果没有就去计算，计算完后把结果存入cache，然后返回结果
+
+		// var cache = [];
+		// function fib(n){
+		// 	//1.从cache获取数据
+		// 	if (cache[n]!==undefined){
+		// 		//如果cache有 直接返回
+		// 		return cache[n];
+		// 	}
+
+		// 	//如果没有,把计算结果存入cache
+		// 	if (n<=2) {
+		// 		cache[n]=1;
+		// 		return 1;
+		// 	}
+		// 	var temp = fib(n-1) + fib(n-2)
+		// 	cache[n] = temp;
+		// 	return temp;
+		// }
+
+		// fib(5);
+		// console.log(count);
+
+
+		//闭包版
+
+
+		function createFib(){
+			var cache = [];
+			function fib(n){
+			//1.从cache获取数据
+				if (cache[n]!==undefined){
+					//如果cache有 直接返回
+					return cache[n];
+				}
+
+			//如果没有,把计算结果存入cache
+				if (n<=2) {
+					cache[n]=1;
+					return 1;
+				}
+				var temp = fib(n-1) + fib(n-2)
+				cache[n] = temp;
+				return temp;
+			}
+
+			return fib;
+		}
+
+		var fib = createFib();
+		console.log(fib(7));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+	
+</body>
+</html>

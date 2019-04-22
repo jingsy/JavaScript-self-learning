@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		//setTimeOut
+		//至少在指定的时间后执行指定的回调函数
+		//因为要等主任务中的代码执行完毕之后才会去
+		//检查setTimeOut的回调函数有没有到执行时间
+		function foo (){
+			for (var i = 0; i < 10; i++) {
+				setTimeout(function(){
+					console.log(i);
+				},0);
+			}
+		}
+		foo();
+		//结果为 10个 10  ， 为什么？？
+
+		//进程：一个应用程序，如 各种应用程序 独占一个进程
+
+		//线程：js为单线程
+		//一个线程一次只能处理一件事情，多个线程就可以
+		//多个事情同时进行
+
+		//js 里分了三个线程（任务），不是并行的
+			//1.渲染任务
+			//2.js代码执行任务
+			//3.事件处理任务
+
+		//js代码的执行顺序，
+			//1.先把主任务（代码任务）执行完毕
+			//2.再去执行次要的任务 包括setTimeout,setInterval中的回调函数中的代码
+
+
+		
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

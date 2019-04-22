@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<script type="text/javascript">
+		
+		function foo(){
+			var data = 1;
+			return function(){
+				console.log(data);
+			}
+		}
+
+		var f1 = foo();
+		var f2 = foo();  //f1 f2都有一份自己私有的数据空间 如都有自己的data=1
+
+		// 闭包的函数拥有自己独有的函数
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

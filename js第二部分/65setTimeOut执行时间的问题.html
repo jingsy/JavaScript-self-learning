@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		//问题的代码
+		//检查setTimeOut的回调函数有没有到执行时间
+		// function foo (){
+		// 	for (var i = 0; i < 10; i++) {
+		// 		setTimeout(function(){
+		// 			console.log(i);
+		// 		},0);
+		// 	}
+		// }
+		// foo();
+		//结果为 10个 10  ， 为什么？？
+
+		//回调函数被放入一个容器（放了10次），等待执行
+		//i=10
+		//打印10次 console.log(i);
+
+
+		//解决问题代码
+		for (var i = 0; i < 10; i++) {
+			function foo (j){
+				// var j;
+				// j=实参；
+				return function(){
+					console.log(j);
+				};
+			};
+			var f = foo(i);
+			// f();
+			setTimeout(f,0);
+		}
+
+
+
+	</script>
+</body>
+</html>
